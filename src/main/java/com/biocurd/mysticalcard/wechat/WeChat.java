@@ -27,6 +27,10 @@ public class WeChat {
     private String accessToken;
     private final ScheduledExecutorService scheduled;
 
+    /**
+     * 实例化
+     * @param config 小程序配置
+     */
     public WeChat(WeChatConfig config) {
         SimpleClientHttpRequestFactory factory = new SimpleClientHttpRequestFactory();
         factory.setReadTimeout(5000);
@@ -53,7 +57,9 @@ public class WeChat {
         if (config.getState() != null) {
             item.setMiniProgramState(config.getState());
         }
-        item.setPage(page);
+        if (page != null) {
+            item.setPage(page);
+        }
         if (data != null) {
             item.setData(data);
         }

@@ -7,7 +7,13 @@ package com.biocurd.mysticalcard.wechat.bean;
 public class WeChatConfig {
     private String appId;
     private String appSecret;
+    /**
+     * 订阅消息模版Id
+     */
     private String templateId;
+    /**
+     * 订阅消息跳转小程序类型
+     */
     private String state;
 
     public String getAppId() {
